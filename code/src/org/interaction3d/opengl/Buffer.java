@@ -32,18 +32,20 @@
  */
 package org.interaction3d.opengl;
 
-import java.lang.annotation.Documented;
-import java.lang.annotation.Retention;
-import java.lang.annotation.Target;
-import static java.lang.annotation.ElementType.FIELD;
-import static java.lang.annotation.RetentionPolicy.RUNTIME;
-
-@Retention(RUNTIME)
-@Target(FIELD)
-@Documented
-public @interface FragData
+public final class Buffer
 {
-  int location() default -1;
+  public enum Usage
+  {
+    STREAM_DRAW,
+    STREAM_READ,
+    STREAM_COPY,
+    STATIC_DRAW,
+    STATIC_READ,
+    STATIC_COPY,
+    DYNAMIC_DRAW,
+    DYNAMIC_READ,
+    DYNAMIC_COPY;
+  }
 
-  boolean required() default false;
+  private Buffer()  { /* static class */ }
 }

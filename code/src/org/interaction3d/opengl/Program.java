@@ -38,12 +38,35 @@ import java.lang.annotation.Target;
 import static java.lang.annotation.ElementType.FIELD;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
-@Retention(RUNTIME)
-@Target(FIELD)
-@Documented
-public @interface Attribute
+public final class Program
 {
-  int location() default -1;
+  @Retention(RUNTIME)
+  @Target(FIELD)
+  @Documented
+  public @interface Attribute
+  {
+    int location() default -1;
 
-  boolean required() default false;
+    boolean required() default false;
+  }
+
+  @Retention(RUNTIME)
+  @Target(FIELD)
+  @Documented
+  public @interface Uniform
+  {
+    int location() default -1;
+
+    boolean required() default false;
+  }
+
+  @Retention(RUNTIME)
+  @Target(FIELD)
+  @Documented
+  public @interface FragData
+  {
+    int location() default -1;
+
+    boolean required() default false;
+  }
 }

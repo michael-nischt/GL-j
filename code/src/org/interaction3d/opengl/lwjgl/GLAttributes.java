@@ -32,7 +32,7 @@
  */
 package org.interaction3d.opengl.lwjgl;
 
-import org.interaction3d.opengl.Attribute;
+import org.interaction3d.opengl.Program.Attribute;
 import static org.lwjgl.opengl.GL20.glBindAttribLocation;
 import static org.lwjgl.opengl.GL20.glGetAttribLocation;
 

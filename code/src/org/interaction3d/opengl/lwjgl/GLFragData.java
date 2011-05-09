@@ -32,7 +32,7 @@
  */
 package org.interaction3d.opengl.lwjgl;
 
-import org.interaction3d.opengl.FragData;
+import org.interaction3d.opengl.Program.FragData;
 import static org.lwjgl.opengl.GL30.glBindFragDataLocation;
 import static org.lwjgl.opengl.GL30.glGetFragDataLocation;
 

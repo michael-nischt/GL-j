@@ -32,7 +32,7 @@
  */
 package org.interaction3d.opengl.lwjgl;
 
-import org.interaction3d.opengl.Uniform;
+import org.interaction3d.opengl.Program.Uniform;
 import static org.lwjgl.opengl.GL20.glGetUniformLocation;
 
 final class GLUniforms extends GLLocations<Uniform>
