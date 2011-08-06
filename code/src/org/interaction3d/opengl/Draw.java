@@ -36,7 +36,15 @@ public final class Draw
 {
   public enum Mode
   {
-    TRIANGLES;
+    //1.1
+    POINTS,
+    LINE_STRIP, LINE_LOOP, LINES,
+    TRIANGLE_STRIP, TRIANGLE_FAN, TRIANGLES,
+    //3.2
+    //LINE_STRIP_ADJACENCY, LINES_ADJACENCY,
+    //TRIANGLE_STRIP_ADJACENCY, TRIANGLES_ADJACENCY,
+    //4.0
+    //PATCHES
   }
 
   public enum Type
@@ -84,6 +92,5 @@ public final class Draw
     return new Arrays(mode, first, count);
   }
 
-  private Draw()
-  { /* static class */ }
+  private Draw() { /* static class */ }
 }

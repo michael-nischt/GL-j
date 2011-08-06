@@ -69,8 +69,20 @@ public final class GLDrawCalls
   {
     switch(mode)
     {
+      case TRIANGLE_FAN:
+        return GL11.GL_TRIANGLE_FAN;
+      case TRIANGLE_STRIP:
+        return GL11.GL_TRIANGLE_STRIP;
       case TRIANGLES:
         return GL11.GL_TRIANGLES;
+      case LINE_LOOP:
+        return GL11.GL_LINE_LOOP;
+      case LINE_STRIP:
+        return GL11.GL_LINE_STRIP;
+      case LINES:
+        return GL11.GL_LINES;
+      case POINTS:
+        return GL11.GL_POINTS;
       default:
         throw new IllegalArgumentException();
     }
