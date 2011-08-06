@@ -63,32 +63,27 @@ import static org.lwjgl.opengl.GL40.GL_TESS_CONTROL_SHADER;
 import static org.lwjgl.opengl.GL40.GL_TESS_EVALUATION_SHADER;
 
 public final class GLPrograms
-{  
-  @GL(GL20.class)
+{
   public static int vertexShader(CharSequence... sources)
   {
     return shader(GL_VERTEX_SHADER, sources);
   }
 
-  @GL(GL20.class)
   public static int fragmentShader(CharSequence... sources)
   {
     return shader(GL_FRAGMENT_SHADER, sources);
   }
 
-  @GL(GL30.class)
   public static int geometryShader(CharSequence... sources)
   {
     return shader(GL_GEOMETRY_SHADER, sources);
   }
 
-  @GL(GL40.class)
   public static int tessControlShader(CharSequence... sources)
   {
     return shader(GL_TESS_CONTROL_SHADER, sources);
   }
 
-  @GL(GL40.class)
   public static int tessEvaluationShader(CharSequence... sources)
   {
     return shader(GL_TESS_EVALUATION_SHADER, sources);
@@ -111,9 +106,8 @@ public final class GLPrograms
 
     return shader;
   }
-  
-    
-  @GL(GL20.class)
+
+
   public static int program(int... gl_shaders)
   {
     int gl_program = glCreateProgram();
@@ -126,8 +120,7 @@ public final class GLPrograms
 
     return gl_program;
   }
-  
-  @GL(GL20.class)
+
   public static void linkProgram(int gl_program)
   {
     glLinkProgram(gl_program);
@@ -140,8 +133,7 @@ public final class GLPrograms
       throw new RuntimeException(error);
     }
   }
-  
-  @GL(GL20.class)
+
   static void deleteProgramAndShaders(int gl_program)
   {
     if (!glIsProgram(gl_program))
@@ -169,8 +161,8 @@ public final class GLPrograms
     }
 
     glDeleteProgram(gl_program);
-  }  
-  
-  private GLPrograms() { /* static class */ } 
+  }
+
+  private GLPrograms() { /* static class */ }
 
 }

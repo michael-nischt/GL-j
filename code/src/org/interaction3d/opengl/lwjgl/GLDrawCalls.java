@@ -33,21 +33,18 @@
 package org.interaction3d.opengl.lwjgl;
 
 import org.interaction3d.opengl.Draw;
-import org.interaction3d.opengl.lwjgl.GL;
-import org.lwjgl.opengl.GL11;
+import static org.lwjgl.opengl.GL11.*;
 
 public final class GLDrawCalls
 {
-   @GL(value=GL11.class)
   public static void draw(Draw.Elements elements)
   {
-    GL11.glDrawElements(mode(elements.mode), elements.count, type(elements.type), elements.offset);
+    glDrawElements(mode(elements.mode), elements.count, type(elements.type), elements.offset);
   }
 
-   @GL(value=GL11.class)
   public static void draw(Draw.Arrays arrays)
   {
-    GL11.glDrawArrays(mode(arrays.mode), arrays.first, arrays.count);
+    glDrawArrays(mode(arrays.mode), arrays.first, arrays.count);
   }
 
   private static int type(Draw.Type type)
@@ -55,11 +52,11 @@ public final class GLDrawCalls
     switch(type)
     {
       case UNSIGNED_BYTE:
-        return GL11.GL_UNSIGNED_BYTE;
+        return GL_UNSIGNED_BYTE;
       case UNSIGNED_SHORT:
-        return GL11.GL_UNSIGNED_SHORT;
+        return GL_UNSIGNED_SHORT;
       case UNSIGNED_INT:
-        return GL11.GL_UNSIGNED_INT;
+        return GL_UNSIGNED_INT;
       default:
         throw new IllegalArgumentException();
     }
@@ -70,19 +67,19 @@ public final class GLDrawCalls
     switch(mode)
     {
       case TRIANGLE_FAN:
-        return GL11.GL_TRIANGLE_FAN;
+        return GL_TRIANGLE_FAN;
       case TRIANGLE_STRIP:
-        return GL11.GL_TRIANGLE_STRIP;
+        return GL_TRIANGLE_STRIP;
       case TRIANGLES:
-        return GL11.GL_TRIANGLES;
+        return GL_TRIANGLES;
       case LINE_LOOP:
-        return GL11.GL_LINE_LOOP;
+        return GL_LINE_LOOP;
       case LINE_STRIP:
-        return GL11.GL_LINE_STRIP;
+        return GL_LINE_STRIP;
       case LINES:
-        return GL11.GL_LINES;
+        return GL_LINES;
       case POINTS:
-        return GL11.GL_POINTS;
+        return GL_POINTS;
       default:
         throw new IllegalArgumentException();
     }

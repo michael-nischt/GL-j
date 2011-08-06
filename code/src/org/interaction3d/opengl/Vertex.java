@@ -85,9 +85,9 @@ public final class Vertex
     public final int elementArrayBufferObject;
     public final AttribPointer[] attribPointers;
 
-    private Array(int gl, AttribPointer[] attribPointers)
+    private Array(int elementArrayBufferObject, AttribPointer[] attribPointers)
     {
-      this.elementArrayBufferObject = gl;
+      this.elementArrayBufferObject = elementArrayBufferObject;
       this.attribPointers = attribPointers;
     }
   }
