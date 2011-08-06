@@ -120,6 +120,16 @@ public class GLProgramsTest
             single.check();
         }
         {
+            Structure[] multiple = new Structure[2];
+            multiple[0] = new Structure();
+            multiple[1] = new Structure();
+            uniforms(gl_program,  "multiple", multiple);
+            for(Structure single : multiple)
+            {
+                single.check();
+            }
+        }
+        {
             Attributes330 attributes = new Attributes330();
             attributes(gl_program, attributes);
             attributes.check();

@@ -16,11 +16,8 @@ uniform Structure multiple[2];
 
 uniform vec2 pairs[2];
 
-
-
 attribute vec4 position;
 attribute mat4 matrix;
-
 
 varying vec4 foo;
 
