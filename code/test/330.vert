@@ -5,17 +5,25 @@ uniform mat4 projection = mat4(1.0);
 uniform mat4 view = mat4(1.0);
 uniform mat4 model = mat4(1.0);
 
-uniform Pair
-{
-    vec2 pairs[2];
-};
+//uniform Pair
+//{
+ //   vec2 pairs[2];
+//};
 
+uniform vec2 pairs[2];
 
-uniform Block
+//uniform Block
+//{
+//    vec4 quad;
+//    vec2 pairs[2];
+//} single;
+
+struct Structure
 {
     vec4 quad;
     vec2 pairs[2];
-} single;
+};
+uniform Structure single;
 
 layout(location=0) in vec4 position;
 layout(location=1) in mat4 matrix[2];

@@ -35,10 +35,13 @@ package org.interaction3d.opengl.lwjgl;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;
+import java.nio.IntBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.lwjgl.opengl.GL20;
+import org.lwjgl.opengl.GL31;
 import static org.lwjgl.opengl.GL20.glIsProgram;
 
 
@@ -135,6 +138,10 @@ abstract class GLLocations<T extends Annotation>
     int location = glGetLocation(gl_program, name);
     if (isRequired(annotation) && location < 0)
     {
+       java.nio.IntBuffer index = org.lwjgl.BufferUtils.createIntBuffer(1);
+      GL31.glGetUniformIndices(gl_program, new String[] { name} , index);
+      System.out.println(index.get());
+      System.out.println(GL20.glGetUniformLocation(gl_program, name));
       throw new RuntimeException(type.getName() + " not found: " + name);
     }
     else if (location >= 0)

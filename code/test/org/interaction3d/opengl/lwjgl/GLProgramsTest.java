@@ -15,7 +15,6 @@ import static org.lwjgl.opengl.GLContext.getCapabilities;
 import org.interaction3d.opengl.Program.Attribute;
 import org.interaction3d.opengl.Program.FragData;
 import org.interaction3d.opengl.Program.Uniform;
-import org.junit.Ignore;
 import static org.interaction3d.opengl.lwjgl.GLPrograms.deleteProgramAndShaders;
 import static org.interaction3d.opengl.lwjgl.GLProgramLocations.attributes;
 import static org.interaction3d.opengl.lwjgl.GLProgramLocations.uniforms;
@@ -91,8 +90,8 @@ public class GLProgramsTest
         deleteProgramAndShaders(gl_program);
     }
 
-    @Test @Ignore
-    public void testUniforms33()
+    @Test //@Ignore
+    public void testUniforms330()
     {
         if(!getCapabilities().OpenGL33)
         {
@@ -109,7 +108,6 @@ public class GLProgramsTest
           fail("could not create program");
         }
 
-
         {
             Global global = new Global();
             uniforms(gl_program, global);
@@ -117,7 +115,8 @@ public class GLProgramsTest
         }
         {
             Structure single = new Structure();
-            uniforms(gl_program,  "Block", single);
+            //uniforms(gl_program,  "Block", single);
+            uniforms(gl_program,  "single", single);
             single.check();
         }
         {
