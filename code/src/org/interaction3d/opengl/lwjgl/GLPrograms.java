@@ -32,17 +32,11 @@
  */
 package org.interaction3d.opengl.lwjgl;
 
-import org.lwjgl.opengl.GL40;
-import org.lwjgl.opengl.GL20;
 import java.nio.IntBuffer;
 import org.lwjgl.BufferUtils;
-import org.lwjgl.opengl.GL30;
 import static org.lwjgl.opengl.GL11.GL_FALSE;
 import static org.lwjgl.opengl.GL20.GL_LINK_STATUS;
-import static org.lwjgl.opengl.GL20.GL_COMPILE_STATUS;
 import static org.lwjgl.opengl.GL20.GL_INFO_LOG_LENGTH;
-import static org.lwjgl.opengl.GL20.GL_VERTEX_SHADER;
-import static org.lwjgl.opengl.GL20.GL_FRAGMENT_SHADER;
 import static org.lwjgl.opengl.GL20.glIsProgram;
 import static org.lwjgl.opengl.GL20.glDeleteProgram;
 import static org.lwjgl.opengl.GL20.glCreateProgram;
@@ -52,62 +46,10 @@ import static org.lwjgl.opengl.GL20.glGetProgramInfoLog;
 import static org.lwjgl.opengl.GL20.glAttachShader;
 import static org.lwjgl.opengl.GL20.glIsShader;
 import static org.lwjgl.opengl.GL20.glDeleteShader;
-import static org.lwjgl.opengl.GL20.glCreateShader;
-import static org.lwjgl.opengl.GL20.glCompileShader;
-import static org.lwjgl.opengl.GL20.glGetShader;
-import static org.lwjgl.opengl.GL20.glShaderSource;
-import static org.lwjgl.opengl.GL20.glGetShaderInfoLog;
 import static org.lwjgl.opengl.GL20.glGetAttachedShaders;
-import static org.lwjgl.opengl.GL32.GL_GEOMETRY_SHADER;
-import static org.lwjgl.opengl.GL40.GL_TESS_CONTROL_SHADER;
-import static org.lwjgl.opengl.GL40.GL_TESS_EVALUATION_SHADER;
 
 public final class GLPrograms
 {
-  public static int vertexShader(CharSequence... sources)
-  {
-    return shader(GL_VERTEX_SHADER, sources);
-  }
-
-  public static int fragmentShader(CharSequence... sources)
-  {
-    return shader(GL_FRAGMENT_SHADER, sources);
-  }
-
-  public static int geometryShader(CharSequence... sources)
-  {
-    return shader(GL_GEOMETRY_SHADER, sources);
-  }
-
-  public static int tessControlShader(CharSequence... sources)
-  {
-    return shader(GL_TESS_CONTROL_SHADER, sources);
-  }
-
-  public static int tessEvaluationShader(CharSequence... sources)
-  {
-    return shader(GL_TESS_EVALUATION_SHADER, sources);
-  }
-
-  private static int shader(int type, CharSequence... sources)
-  {
-    final int shader = glCreateShader(type);
-    glShaderSource(shader, sources);
-    glCompileShader(shader);
-
-    int status = glGetShader(shader, GL_COMPILE_STATUS);
-    if (status == GL_FALSE)
-    {
-      int logSize = glGetShader(shader, GL_INFO_LOG_LENGTH);
-      String error = glGetShaderInfoLog(shader, logSize);
-
-      throw new RuntimeException(error);
-    }
-
-    return shader;
-  }
-
-
   public static int program(int... gl_shaders)
   {
     int gl_program = glCreateProgram();
@@ -121,7 +63,7 @@ public final class GLPrograms
     return gl_program;
   }
 
-  public static void linkProgram(int gl_program)
+  static void linkProgram(int gl_program)
   {
     glLinkProgram(gl_program);
 

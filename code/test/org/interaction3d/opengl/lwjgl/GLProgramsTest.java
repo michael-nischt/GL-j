@@ -19,8 +19,8 @@ import static org.interaction3d.opengl.lwjgl.GLPrograms.deleteProgramAndShaders;
 import static org.interaction3d.opengl.lwjgl.GLProgramLocations.attributes;
 import static org.interaction3d.opengl.lwjgl.GLProgramLocations.uniforms;
 import static org.interaction3d.opengl.lwjgl.GLProgramLocations.fragData;
-import static org.interaction3d.opengl.lwjgl.GLPrograms.fragmentShader;
-import static org.interaction3d.opengl.lwjgl.GLPrograms.vertexShader;
+import static org.interaction3d.opengl.lwjgl.GLShaders.fragmentShader;
+import static org.interaction3d.opengl.lwjgl.GLShaders.vertexShader;
 import static org.interaction3d.opengl.lwjgl.GLPrograms.program;
 import static org.interaction3d.opengl.util.ShaderSource.resource;
 
