@@ -22,7 +22,7 @@ import static org.interaction3d.opengl.lwjgl.GLProgramLocations.fragData;
 import static org.interaction3d.opengl.lwjgl.GLPrograms.fragmentShader;
 import static org.interaction3d.opengl.lwjgl.GLPrograms.vertexShader;
 import static org.interaction3d.opengl.lwjgl.GLPrograms.program;
-import static org.interaction3d.opengl.lwjgl.ShaderSource.resource;
+import static org.interaction3d.opengl.util.ShaderSource.resource;
 
 public class GLProgramsTest
 {

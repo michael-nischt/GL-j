@@ -1,8 +1,8 @@
-package org.interaction3d.opengl.lwjgl;
+package org.interaction3d.opengl.util;
 
 import java.util.Scanner;
 
-final class ShaderSource
+public final class ShaderSource
 {
   public static CharSequence resource(String path)
   {
