@@ -45,8 +45,6 @@ public final class Program
   @Documented
   public @interface Attribute
   {
-    int location() default -1;
-
     boolean required() default false;
   }
 
@@ -55,8 +53,6 @@ public final class Program
   @Documented
   public @interface Uniform
   {
-    int location() default -1;
-
     boolean required() default false;
   }
 
@@ -65,8 +61,6 @@ public final class Program
   @Documented
   public @interface FragData
   {
-    int location() default -1;
-
     boolean required() default false;
   }
 }
